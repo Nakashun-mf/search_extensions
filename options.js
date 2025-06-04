@@ -5,6 +5,10 @@ const editArea = document.getElementById('edit-area');
 // ドラッグ＆ドロップ用変数
 let dragSrcIdx = null;
 
+// インポート・エクスポート
+const exportBtn = document.getElementById('export-btn');
+const importFile = document.getElementById('import-file');
+
 // 検索ボックス一覧を表示
 async function renderList() {
   const data = await chrome.storage.local.get('searchBoxes');
@@ -159,4 +163,34 @@ function showEditForm(idx) {
 addBoxBtn.onclick = () => showEditForm();
 
 // 初期表示
-renderList(); 
+renderList();
+
+exportBtn.onclick = async () => {
+  const data = await chrome.storage.local.get('searchBoxes');
+  const json = JSON.stringify(data.searchBoxes || [], null, 2);
+  const blob = new Blob([json], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'searchBoxes.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
+
+importFile.onchange = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  try {
+    const text = await file.text();
+    const arr = JSON.parse(text);
+    if (!Array.isArray(arr)) throw new Error('形式が不正です');
+    await chrome.storage.local.set({searchBoxes: arr});
+    alert('インポートしました');
+    renderList();
+  } catch (err) {
+    alert('インポートに失敗しました: ' + err.message);
+  }
+  importFile.value = '';
+}; 

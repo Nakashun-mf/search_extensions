@@ -231,4 +231,91 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.import-export-area {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin: 18px 0 0 0;
+}
+#import-btn, #export-btn, .import-label {
+  padding: 6px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 1px 2px #1976d210;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+#import-btn:hover, #export-btn:hover, .import-label:hover {
+  background: #1565c0;
+}
+.import-label {
+  background: #43a047;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0;
+}
+.import-label input[type="file"] {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #181c20;
+    color: #e0e6ed;
+  }
+  .site-header {
+    background: linear-gradient(90deg, #263859 60%, #1976d2 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px #0008;
+  }
+  .site-header .desc {
+    color: #b0bec5;
+  }
+  .site-main {
+    background: none;
+  }
+  .box-item, #edit-area {
+    background: #23272e;
+    border-color: #374151;
+    box-shadow: 0 2px 8px #0006;
+  }
+  .box-item b, #edit-area h2 {
+    color: #90caf9;
+  }
+  .box-item span, #edit-area label {
+    color: #e0e6ed;
+  }
+  .box-item button, #export-btn, .import-label, #add-box, #edit-area button {
+    background: #263859;
+    color: #fff;
+  }
+  .box-item button[data-edit] {
+    background: #388e3c;
+  }
+  .box-item button[data-del], #edit-area button#del-box {
+    background: #b71c1c;
+  }
+  .box-item button:hover, #export-btn:hover, .import-label:hover, #add-box:hover, #edit-area button:hover {
+    background: #1565c0;
+  }
+  .drag-hint {
+    color: #90caf9;
+  }
+  #edit-area input {
+    background: #181c20;
+    color: #e0e6ed;
+    border-color: #374151;
+  }
+  #edit-area small {
+    color: #b0bec5;
+  }
+  .site-footer {
+    color: #888;
+  }
 } 
