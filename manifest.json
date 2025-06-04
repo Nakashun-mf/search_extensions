@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "カスタム検索ボックス",
+  "version": "1.0",
+  "description": "複数のカスタム検索ボックスを設定・利用できる検索拡張機能です。",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "storage"
+  ]
+} 

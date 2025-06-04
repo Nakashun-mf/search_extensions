@@ -1,0 +1,234 @@
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+.site-header {
+  background: linear-gradient(90deg, #1976d2 60%, #43a047 100%);
+  color: #fff;
+  padding: 32px 0 18px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px #1976d220;
+}
+.site-header h1 {
+  font-size: 1.7em;
+  margin: 0 0 8px 0;
+  letter-spacing: 1px;
+}
+.site-header .desc {
+  font-size: 1.05em;
+  margin: 0;
+  color: #e3f2fd;
+}
+.site-main {
+  width: 90%;
+  max-width: 1600px;
+  margin: 32px auto 0 auto;
+  padding: 0 12px 32px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#boxes-list {
+  margin-bottom: 24px;
+}
+.box-item {
+  background: #fff;
+  border: 1.5px solid #e3eaf2;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 18px 16px 14px 16px;
+  box-shadow: 0 2px 8px #1976d210;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  transition: box-shadow 0.2s, border 0.2s;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.box-item:hover {
+  box-shadow: 0 4px 16px #1976d220;
+  border: 1.5px solid #1976d2;
+}
+.box-item b {
+  font-size: 1.08em;
+  color: #1976d2;
+}
+.box-item span {
+  color: #444;
+  font-size: 0.97em;
+  flex: 1 1 auto;
+  word-break: break-all;
+}
+.box-item button {
+  padding: 4px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px #1976d210;
+}
+.box-item button[data-edit] {
+  background: #43a047;
+}
+.box-item button[data-del] {
+  background: #e53935;
+}
+.box-item button:hover {
+  filter: brightness(0.92);
+  box-shadow: 0 2px 6px #1976d220;
+}
+#add-box {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 18px auto;
+  padding: 12px 0;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #1976d2 60%, #43a047 100%);
+  color: #fff;
+  font-size: 1.08em;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #1976d210;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+  display: block;
+}
+#add-box:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #388e3c 100%);
+}
+#edit-area {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  border: 1.5px solid #bbb;
+  border-radius: 12px;
+  padding: 18px 16px 14px 16px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px #1976d210;
+}
+#edit-area h2 {
+  font-size: 1.15em;
+  margin: 0 0 10px 0;
+  color: #1976d2;
+}
+#edit-area label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+#edit-area input {
+  width: 98%;
+  margin-bottom: 10px;
+  padding: 6px;
+  border: 1px solid #b0bec5;
+  border-radius: 5px;
+  font-size: 1em;
+  background: #f7fafc;
+}
+#edit-area small {
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+#edit-area button {
+  margin-right: 10px;
+  padding: 5px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+#edit-area button:hover {
+  background: #1565c0;
+}
+.site-footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.95em;
+  padding: 18px 0 12px 0;
+  margin-top: 32px;
+}
+@media (max-width: 900px) {
+  .site-main {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 0 2vw 32px 2vw;
+  }
+  #edit-area, .box-item {
+    padding: 12px 6px 10px 6px;
+  }
+  .box-item {
+    width: 98vw;
+    max-width: 98vw;
+  }
+}
+@media (max-width: 1100px) {
+  .box-item {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 12px 6px 10px 6px;
+  }
+  #add-box {
+    width: 98vw;
+    max-width: 98vw;
+  }
+}
+@media (max-width: 1700px) {
+  .box-item {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 12px 6px 10px 6px;
+  }
+}
+.mode-switch {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.mode-btn {
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #1976d2;
+  background: #f0f6ff;
+  color: #1976d2;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-size: 0.97em;
+}
+.mode-btn.selected, .mode-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+#edit-area input[type="radio"] {
+  display: none;
+}
+.mode-btn.selected {
+  background: #1976d2;
+  color: #fff !important;
+}
+.box-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.box-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+} 
